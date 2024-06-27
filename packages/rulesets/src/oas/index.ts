@@ -349,6 +349,18 @@ const ruleset = {
         },
       },
     },
+    'path-includes-wildcard': {
+      description: 'Path may include a wildcard character.',
+      recommended: true,
+      given: '$.paths',
+      then: {
+        field: '@key',
+        function: pattern,
+        functionOptions: {
+          notMatch: '\\?',
+        },
+      },
+    },
     'path-not-include-query': {
       description: 'Path must not include query string.',
       recommended: true,
